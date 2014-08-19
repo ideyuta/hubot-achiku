@@ -18,4 +18,4 @@ module.exports = (robot) ->
   robot.hear /achiku|chiku|知久|翼|ちく|あきら|texas/i, (msg) ->
     p = parseFloat(process.env.HUBOT_ACHIKU_P ? '0.1')
     if Math.random() <= p
-      res.send "@achiku #{msg.random images}"
+      msg.send "@achiku #{msg.random images}"
