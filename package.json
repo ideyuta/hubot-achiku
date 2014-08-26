@@ -1,6 +1,6 @@
 {
   "name": "hubot-achiku",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hubot-scripts returns Achiku image",
   "main": "src/index.coffee",
   "scripts": {
