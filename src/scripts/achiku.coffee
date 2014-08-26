@@ -5,8 +5,7 @@
 #   HUBOT_ACHIKU_P - achiku画像返す確率を指定
 #
 # Commands:
-#   hubot achiku - 知久翼画像をランダムに返す
-#   khubot achiku bomb N - 知久翼画像をランダムにN個返す
+#   hubot achiku bomb N - 知久翼画像をランダムにN個返す
 #
 # Author:
 #   ideyuta
