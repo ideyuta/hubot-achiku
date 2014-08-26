@@ -15,7 +15,12 @@ images = require '../data/images.json'
 
 module.exports = (robot) ->
 
-  robot.hear /achiku|chiku|知久|翼|ちく|あきら|texas/i, (msg) ->
+  robot.hear /[^a]chiku|知久|翼|ちく|あきら|texas/i, (msg) ->
     p = parseFloat(process.env.HUBOT_ACHIKU_P ? '0.1')
     if Math.random() <= p
+      msg.send "@achiku #{msg.random images}"
+
+  robot.respond /achiku bomb( (\d+))?/i, (msg) ->
+    count = msg.match[2] || 5
+    for [0..count]
       msg.send "@achiku #{msg.random images}"
