@@ -2,10 +2,13 @@
 #   From Texas!
 #
 # Configuration:
+#   HUBOT_ACHIKU_BOMB_LIMIT - achiku bombの最大数
 #   HUBOT_ACHIKU_P - achiku画像返す確率を指定
 #
 # Commands:
+#   hubot achiku - 知久翼画像をランダムに返す
 #   hubot achiku bomb N - 知久翼画像をランダムにN個返す
+#   hubot achiku fire - 知久翼炎舞画像を返す
 #
 # Author:
 #   ideyuta
@@ -19,7 +22,17 @@ module.exports = (robot) ->
     if Math.random() <= p
       msg.send "@achiku #{msg.random images}"
 
+  robot.respond /achiku$/i, (msg) ->
+    msg.send "@achiku #{msg.random images}"
+
+  robot.respond /achiku fire/i, (msg) ->
+    msg.send '@achiku http://i.imgur.com/rtzM9iF.gif'
+
   robot.respond /achiku bomb( (\d+))?/i, (msg) ->
-    count = msg.match[2] || 5
-    for [1..count]
-      msg.send "@achiku #{msg.random images}"
+    max = parseInt(process.env.HUBOT_ACHIKU_BOMB_LIMIT ? '10')
+    count = msg.match[2] || 3
+    if count > max
+      msg.reply "achiku bombは#{max}までやで"
+    else
+      for [1..count]
+        msg.send "@achiku #{msg.random images}"
