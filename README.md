@@ -7,6 +7,9 @@ From Texas!
 **HUBOT_ACHIKU_P**
 achiku画像を返す確率を指定
 
+**HUBOT_ACHIKU_BOMB_LIMIT**
+achiku bombの最大数
+
 ## Installation
 
 1. `ideyuta/hubot-achiku` を package.json に追加

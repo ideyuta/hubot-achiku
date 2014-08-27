@@ -2,6 +2,7 @@
 #   From Texas!
 #
 # Configuration:
+#   HUBOT_ACHIKU_BOMB_LIMIT - achiku bombの最大数
 #   HUBOT_ACHIKU_P - achiku画像返す確率を指定
 #
 # Commands:
@@ -24,6 +25,10 @@ module.exports = (robot) ->
     msg.send "@achiku #{msg.random images}"
 
   robot.respond /achiku bomb( (\d+))?/i, (msg) ->
+    max = parseInt(process.env.HUBOT_ACHIKU_BOMB_LIMIT ? '10')
     count = msg.match[2] || 3
-    for [1..count]
-      msg.send "@achiku #{msg.random images}"
+    if count > max
+      msg.reply "achiku bombは#{max}までやで"
+    else
+      for [1..count]
+        msg.send "@achiku #{msg.random images}"
