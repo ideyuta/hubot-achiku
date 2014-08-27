@@ -8,6 +8,7 @@
 # Commands:
 #   hubot achiku - 知久翼画像をランダムに返す
 #   hubot achiku bomb N - 知久翼画像をランダムにN個返す
+#   hubot achiku fire - 知久翼炎舞画像を返す
 #
 # Author:
 #   ideyuta
@@ -23,6 +24,9 @@ module.exports = (robot) ->
 
   robot.respond /achiku$/i, (msg) ->
     msg.send "@achiku #{msg.random images}"
+
+  robot.respond /achiku fire/i, (msg) ->
+    msg.send '@achiku http://i.imgur.com/rtzM9iF.gif'
 
   robot.respond /achiku bomb( (\d+))?/i, (msg) ->
     max = parseInt(process.env.HUBOT_ACHIKU_BOMB_LIMIT ? '10')

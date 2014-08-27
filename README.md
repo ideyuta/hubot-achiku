@@ -21,4 +21,5 @@ achiku bombの最大数
 ```
 hubot achiku - 知久翼画像をランダムに返す
 hubot achiku bomb N - 知久翼画像をランダムにN個返す
+hubot achiku fire - 知久翼炎舞画像を返す
 ```
