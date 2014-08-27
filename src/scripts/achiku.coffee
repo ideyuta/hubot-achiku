@@ -5,6 +5,7 @@
 #   HUBOT_ACHIKU_P - achiku画像返す確率を指定
 #
 # Commands:
+#   hubot achiku - 知久翼画像をランダムに返す
 #   hubot achiku bomb N - 知久翼画像をランダムにN個返す
 #
 # Author:
@@ -18,6 +19,9 @@ module.exports = (robot) ->
     p = parseFloat(process.env.HUBOT_ACHIKU_P ? '0.1')
     if Math.random() <= p
       msg.send "@achiku #{msg.random images}"
+
+  robot.respond /achiku$/i, (msg) ->
+    msg.send "@achiku #{msg.random images}"
 
   robot.respond /achiku bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || 5

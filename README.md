@@ -16,5 +16,6 @@ achiku画像を返す確率を指定
 ## Commands
 
 ```
+hubot achiku - 知久翼画像をランダムに返す
 hubot achiku bomb N - 知久翼画像をランダムにN個返す
 ```
