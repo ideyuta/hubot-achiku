@@ -24,6 +24,6 @@ module.exports = (robot) ->
     msg.send "@achiku #{msg.random images}"
 
   robot.respond /achiku bomb( (\d+))?/i, (msg) ->
-    count = msg.match[2] || 5
+    count = msg.match[2] || 3
     for [1..count]
       msg.send "@achiku #{msg.random images}"
